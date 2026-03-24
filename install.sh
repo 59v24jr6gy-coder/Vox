@@ -5,14 +5,14 @@ cd "$(dirname "$0")"
 
 BUNDLE_ID="com.daviduhlig.Vox"
 INSTALL_PATH="$HOME/Applications/Vox.app"
-ENTITLEMENTS="PushToTalk/Resources/Vox.entitlements"
+ENTITLEMENTS="Vox/Resources/Vox.entitlements"
 
 echo "=== Vox Build & Install ==="
 
 # 1. Build (ohne Signing — machen wir manuell)
 echo "→ Baue App..."
 xcodebuild \
-  -project PushToTalk.xcodeproj \
+  -project Vox.xcodeproj \
   -scheme Vox \
   -configuration Debug \
   -destination "platform=macOS" \
@@ -23,7 +23,7 @@ xcodebuild \
   build 2>&1 | tail -3
 
 # 2. App-Pfad finden
-APP=$(find ~/Library/Developer/Xcode/DerivedData/PushToTalk-*/Build/Products/Debug -name "Vox.app" 2>/dev/null | head -1)
+APP=$(find ~/Library/Developer/Xcode/DerivedData/Vox-*/Build/Products/Debug -name "Vox.app" 2>/dev/null | head -1)
 [ -z "$APP" ] && { echo "❌ Build nicht gefunden"; exit 1; }
 echo "→ Gefunden: $APP"
 

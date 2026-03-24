@@ -1,4 +1,4 @@
-name: PushToTalk
+name: Vox
 options:
   bundleIdPrefix: com.daviduhlig
   deploymentTarget:
@@ -21,16 +21,16 @@ targets:
     deploymentTarget: "14.0"
 
     sources:
-      - path: PushToTalk
+      - path: Vox
         excludes:
           - "Resources/Info.plist"
           - "Resources/Vox.entitlements"
 
     resources:
-      - path: PushToTalk/Resources/Assets.xcassets
+      - path: Vox/Resources/Assets.xcassets
 
     info:
-      path: PushToTalk/Resources/Info.plist
+      path: Vox/Resources/Info.plist
       properties:
         LSUIElement: YES
         NSMicrophoneUsageDescription: "Vox benötigt Mikrofon-Zugriff für Sprachaufnahmen."
@@ -38,7 +38,7 @@ targets:
         LSMinimumSystemVersion: "14.0"
 
     entitlements:
-      path: PushToTalk/Resources/Vox.entitlements
+      path: Vox/Resources/Vox.entitlements
       properties:
         com.apple.security.app-sandbox: false
         com.apple.security.device.audio-input: true
