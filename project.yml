@@ -1,0 +1,63 @@
+name: PushToTalk
+options:
+  bundleIdPrefix: com.daviduhlig
+  deploymentTarget:
+    macOS: "14.0"
+  xcodeVersion: "15"
+  generateEmptyDirectories: true
+
+packages:
+  WhisperKit:
+    url: https://github.com/argmaxinc/WhisperKit
+    from: "0.9.0"
+  LaunchAtLogin:
+    url: https://github.com/sindresorhus/LaunchAtLogin-Modern
+    from: "1.0.0"
+
+targets:
+  Vox:
+    type: application
+    platform: macOS
+    deploymentTarget: "14.0"
+
+    sources:
+      - path: PushToTalk
+        excludes:
+          - "Resources/Info.plist"
+          - "Resources/Vox.entitlements"
+
+    resources:
+      - path: PushToTalk/Resources/Assets.xcassets
+
+    info:
+      path: PushToTalk/Resources/Info.plist
+      properties:
+        LSUIElement: YES
+        NSMicrophoneUsageDescription: "Vox benötigt Mikrofon-Zugriff für Sprachaufnahmen."
+        NSAppleEventsUsageDescription: "Vox benötigt Bedienungshilfen-Zugriff für Text-Einfügung und globale Tastenkürzel."
+        LSMinimumSystemVersion: "14.0"
+
+    entitlements:
+      path: PushToTalk/Resources/Vox.entitlements
+      properties:
+        com.apple.security.app-sandbox: false
+        com.apple.security.device.audio-input: true
+
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.daviduhlig.Vox
+        MARKETING_VERSION: "1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        SWIFT_VERSION: "5.9"
+        MACOSX_DEPLOYMENT_TARGET: "14.0"
+        CODE_SIGN_STYLE: Automatic
+        # DEVELOPMENT_TEAM: "XXXXXXXXXX"  ← Team-ID aus Xcode → Signing & Capabilities eintragen
+        ENABLE_HARDENED_RUNTIME: YES
+        # Sandbox MUSS aus sein für CGEventTap
+        ENABLE_APP_SANDBOX: NO
+
+    dependencies:
+      - package: WhisperKit
+        product: WhisperKit
+      - package: LaunchAtLogin
+        product: LaunchAtLogin

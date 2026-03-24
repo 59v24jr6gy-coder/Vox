@@ -1,0 +1,27 @@
+# Xcode
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+*.xcworkspace/xcshareddata/
+build/
+DerivedData/
+*.moved-aside
+*.xcuserstate
+*.xcscmblueprint
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Compiled binaries
+*.app
+*.dSYM
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
