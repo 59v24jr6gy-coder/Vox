@@ -14,18 +14,17 @@
 		3154A7885FDCF15071BC25A0 /* TextInserter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A08435F80085493D5579F9 /* TextInserter.swift */; };
 		3A9FD96C852348110DCEBE6D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948E812F97BFF141A14E9116 /* SettingsView.swift */; };
 		458914CB167718E14807C7C2 /* PermissionsSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E01FC424DB0170A3E09469C /* PermissionsSettingsView.swift */; };
-		4F07D0F7FDE41AC46CFAC95A /* RecordingOrbWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C904AA83D65305770AE95A4 /* RecordingOrbWindow.swift */; };
 		561003E500FC552C3046E745 /* WhisperKit in Frameworks */ = {isa = PBXBuildFile; productRef = A3DFECF3FC30878DBBD5890D /* WhisperKit */; };
 		9056DD27EAA6A3EB75AA83A3 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = D40B87B61CB630F7849F3AE3 /* LaunchAtLogin */; };
+		95726BD72EFA753683612D2C /* RecordingDot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACE69C93CDA24F8330CAFB8 /* RecordingDot.swift */; };
 		9C0B6173DA855815DD54142A /* HotkeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2736EB0F63C9699746833B1B /* HotkeyManager.swift */; };
 		A75C503195548B1F9396BF4C /* ModelSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8336175CBD090E1D7AE9386E /* ModelSettingsView.swift */; };
-		A8429CAA5BA422079F9A908F /* AppearanceSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44D80087AB97B54F278C388 /* AppearanceSettingsView.swift */; };
 		B52B1931E1B66B780C2B942B /* TranscriptionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0D82EE05212D1C8FC1595F /* TranscriptionEngine.swift */; };
 		B7B46A122F387C1FF71755F3 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD17596E0EA0D4EB03921441 /* OnboardingView.swift */; };
 		E0E748A92765F357F61AFAEE /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF455CE2162A9B133C0FAB0 /* SettingsStore.swift */; };
 		E4DC57EF03E7D17BFF8A0171 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9873B77273AE69FF89F23674 /* AppState.swift */; };
+		E804ADE6991E222AD2A5D578 /* DotAppearanceSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DB454F43CCF7348848D3B7 /* DotAppearanceSettingsView.swift */; };
 		EAE16D6CCA8079F706D66880 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B117BB70F7B38B76BA22D6 /* AppDelegate.swift */; };
-		ECEA4519C9D4D3B706E0FD5E /* RecordingOrbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89154D94E9FAFED09FFA0A57 /* RecordingOrbView.swift */; };
 		F686C96B36EBB2A234DEDE4B /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C3EE1B0F7640A977B77976 /* MenuBarView.swift */; };
 		F706F055BDF0B814D20EB787 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68904B1517179E66B0F11E56 /* AudioRecorder.swift */; };
 /* End PBXBuildFile section */
@@ -36,21 +35,20 @@
 		26C3EE1B0F7640A977B77976 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
 		2736EB0F63C9699746833B1B /* HotkeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeyManager.swift; sourceTree = "<group>"; };
 		2A94697A85465F1DDF25CB95 /* Vox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vox.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2C904AA83D65305770AE95A4 /* RecordingOrbWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingOrbWindow.swift; sourceTree = "<group>"; };
 		316DA4CE32D8F5859D52DFE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3BEFBE99C2A4135D379A427C /* GeneralSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
 		68904B1517179E66B0F11E56 /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 		8336175CBD090E1D7AE9386E /* ModelSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSettingsView.swift; sourceTree = "<group>"; };
-		89154D94E9FAFED09FFA0A57 /* RecordingOrbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingOrbView.swift; sourceTree = "<group>"; };
+		8ACE69C93CDA24F8330CAFB8 /* RecordingDot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingDot.swift; sourceTree = "<group>"; };
 		8E01FC424DB0170A3E09469C /* PermissionsSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionsSettingsView.swift; sourceTree = "<group>"; };
 		948E812F97BFF141A14E9116 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		9873B77273AE69FF89F23674 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		AD17596E0EA0D4EB03921441 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		DEF455CE2162A9B133C0FAB0 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
-		E44D80087AB97B54F278C388 /* AppearanceSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceSettingsView.swift; sourceTree = "<group>"; };
 		E9A08435F80085493D5579F9 /* TextInserter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInserter.swift; sourceTree = "<group>"; };
 		ED516C0F27F8AEF84F87D202 /* HotkeyRecorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeyRecorderView.swift; sourceTree = "<group>"; };
 		EDDADA5C0AD37DA237994DE4 /* VoxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoxApp.swift; sourceTree = "<group>"; };
+		F9DB454F43CCF7348848D3B7 /* DotAppearanceSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotAppearanceSettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,8 +104,7 @@
 				26C3EE1B0F7640A977B77976 /* MenuBarView.swift */,
 				AD17596E0EA0D4EB03921441 /* OnboardingView.swift */,
 				8E01FC424DB0170A3E09469C /* PermissionsSettingsView.swift */,
-				89154D94E9FAFED09FFA0A57 /* RecordingOrbView.swift */,
-				2C904AA83D65305770AE95A4 /* RecordingOrbWindow.swift */,
+				8ACE69C93CDA24F8330CAFB8 /* RecordingDot.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -131,7 +128,7 @@
 		BDAAC581D0D6EFFCE4624B1D /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				E44D80087AB97B54F278C388 /* AppearanceSettingsView.swift */,
+				F9DB454F43CCF7348848D3B7 /* DotAppearanceSettingsView.swift */,
 				3BEFBE99C2A4135D379A427C /* GeneralSettingsView.swift */,
 				8336175CBD090E1D7AE9386E /* ModelSettingsView.swift */,
 				DEF455CE2162A9B133C0FAB0 /* SettingsStore.swift */,
@@ -227,8 +224,8 @@
 			files = (
 				EAE16D6CCA8079F706D66880 /* AppDelegate.swift in Sources */,
 				E4DC57EF03E7D17BFF8A0171 /* AppState.swift in Sources */,
-				A8429CAA5BA422079F9A908F /* AppearanceSettingsView.swift in Sources */,
 				F706F055BDF0B814D20EB787 /* AudioRecorder.swift in Sources */,
+				E804ADE6991E222AD2A5D578 /* DotAppearanceSettingsView.swift in Sources */,
 				1431B9076987F403B46E3742 /* GeneralSettingsView.swift in Sources */,
 				9C0B6173DA855815DD54142A /* HotkeyManager.swift in Sources */,
 				0ADF12D21E415D92AC5B2D34 /* HotkeyRecorderView.swift in Sources */,
@@ -236,8 +233,7 @@
 				A75C503195548B1F9396BF4C /* ModelSettingsView.swift in Sources */,
 				B7B46A122F387C1FF71755F3 /* OnboardingView.swift in Sources */,
 				458914CB167718E14807C7C2 /* PermissionsSettingsView.swift in Sources */,
-				ECEA4519C9D4D3B706E0FD5E /* RecordingOrbView.swift in Sources */,
-				4F07D0F7FDE41AC46CFAC95A /* RecordingOrbWindow.swift in Sources */,
+				95726BD72EFA753683612D2C /* RecordingDot.swift in Sources */,
 				E0E748A92765F357F61AFAEE /* SettingsStore.swift in Sources */,
 				3A9FD96C852348110DCEBE6D /* SettingsView.swift in Sources */,
 				3154A7885FDCF15071BC25A0 /* TextInserter.swift in Sources */,

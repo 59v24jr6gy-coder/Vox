@@ -35,7 +35,7 @@ struct MenuBarView: View {
                 Divider()
 
                 InlineSettingsTabs()
-                    .frame(width: 500, height: 420)
+                    .frame(width: 500, height: 500)
             }
             .transition(.opacity)
 
@@ -137,7 +137,8 @@ private struct InlineSettingsTabs: View {
     private let tabs: [(icon: String, label: String)] = [
         ("gearshape",          "Allgemein"),
         ("brain.head.profile", "Modell"),
-        ("paintpalette",       "Darstellung"),
+        ("paintpalette.fill",  "Darstellung"),
+        ("hand.raised.fill",   "Berechtigungen"),
     ]
 
     var body: some View {
@@ -171,7 +172,8 @@ private struct InlineSettingsTabs: View {
                 switch selected {
                 case 0: GeneralSettingsView()
                 case 1: ModelSettingsView()
-                default: AppearanceSettingsView()
+                case 2: DotAppearanceSettingsView()
+                default: PermissionsSettingsView()
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)

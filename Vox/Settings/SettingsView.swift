@@ -4,15 +4,18 @@ struct SettingsView: View {
     var body: some View {
         TabView {
             GeneralSettingsView()
-                .tabItem { Label("Allgemein",   systemImage: "gearshape") }
+                .tabItem { Label("Allgemein",        systemImage: "gearshape") }
 
             ModelSettingsView()
-                .tabItem { Label("Modell",      systemImage: "brain.head.profile") }
+                .tabItem { Label("Modell",           systemImage: "brain.head.profile") }
 
-            AppearanceSettingsView()
-                .tabItem { Label("Darstellung", systemImage: "paintpalette") }
+            DotAppearanceSettingsView()
+                .tabItem { Label("Darstellung",       systemImage: "paintpalette.fill") }
+
+            PermissionsSettingsView()
+                .tabItem { Label("Berechtigungen",   systemImage: "hand.raised.fill") }
         }
-        .frame(width: 500, height: 420)
+        .frame(width: 500, height: 500)
     }
 }
 

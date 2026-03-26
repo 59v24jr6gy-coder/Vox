@@ -16,6 +16,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
         requestPermissionsIfNeeded()
 
+        _ = RecordingDot.shared   // Dot-Singleton starten (beobachtet AppState)
+
         Task { @MainActor in
             await AppState.shared.initialize()
         }

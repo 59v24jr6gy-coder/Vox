@@ -59,16 +59,6 @@ class AppState: ObservableObject {
             .receive(on: DispatchQueue.main)
             .assign(to: &$audioLevel)
 
-        $recordingState
-            .receive(on: DispatchQueue.main)
-            .sink { state in
-                if state == .recording {
-                    RecordingOrbWindow.shared.show()
-                } else {
-                    RecordingOrbWindow.shared.hide()
-                }
-            }
-            .store(in: &cancellables)
 
         hotkeyManager.onKeyDown = { [weak self] in
             Task { @MainActor in await self?.startRecording() }

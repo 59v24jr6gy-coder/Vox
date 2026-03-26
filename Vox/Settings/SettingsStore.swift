@@ -86,67 +86,6 @@ enum TranscriptionLanguage: String, CaseIterable, Identifiable {
     }
 }
 
-// MARK: - OrbColor
-
-enum OrbColor: String, CaseIterable, Identifiable {
-    case electricBlue  = "electricBlue"
-    case neonViolet    = "neonViolet"
-    case iceWhite      = "iceWhite"
-    case electricIndigo = "electricIndigo"
-    case neonGreen     = "neonGreen"
-    case hotPink       = "hotPink"
-    case goldenHour    = "goldenHour"
-
-    var id: String { rawValue }
-
-    var displayName: String {
-        switch self {
-        case .electricBlue:   return "Electric Blue"
-        case .neonViolet:     return "Neon Violet"
-        case .iceWhite:       return "Ice White"
-        case .electricIndigo: return "Electric Indigo"
-        case .neonGreen:      return "Neon Green"
-        case .hotPink:        return "Hot Pink"
-        case .goldenHour:     return "Golden Hour"
-        }
-    }
-
-    var primary: Color {
-        switch self {
-        case .electricBlue:   return Color(red: 0,     green: 0.667, blue: 1.0)
-        case .neonViolet:     return Color(red: 0.749, green: 0,     blue: 1.0)
-        case .iceWhite:       return Color(red: 0.878, green: 0.965, blue: 1.0)
-        case .electricIndigo: return Color(red: 0.4,   green: 0,     blue: 1.0)
-        case .neonGreen:      return Color(red: 0,     green: 1.0,   blue: 0.533)
-        case .hotPink:        return Color(red: 1.0,   green: 0,     blue: 0.6)
-        case .goldenHour:     return Color(red: 1.0,   green: 0.702, blue: 0)
-        }
-    }
-
-    var secondary: Color {
-        switch self {
-        case .electricBlue:   return Color(red: 0,     green: 0.4,   blue: 1.0)
-        case .neonViolet:     return Color(red: 0.502, green: 0,     blue: 1.0)
-        case .iceWhite:       return Color(red: 0.6,   green: 0.839, blue: 1.0)
-        case .electricIndigo: return Color(red: 0,     green: 0.8,   blue: 1.0)
-        case .neonGreen:      return Color(red: 0,     green: 0.8,   blue: 0.267)
-        case .hotPink:        return Color(red: 0.8,   green: 0,     blue: 0.4)
-        case .goldenHour:     return Color(red: 1.0,   green: 0.4,   blue: 0)
-        }
-    }
-
-    var white: Color {
-        switch self {
-        case .electricBlue:   return Color(red: 0.85, green: 0.95, blue: 1.0)
-        case .neonViolet:     return Color(red: 0.95, green: 0.85, blue: 1.0)
-        case .iceWhite:       return Color(red: 1.0,  green: 1.0,  blue: 1.0)
-        case .electricIndigo: return Color(red: 0.85, green: 0.9,  blue: 1.0)
-        case .neonGreen:      return Color(red: 0.85, green: 1.0,  blue: 0.9)
-        case .hotPink:        return Color(red: 1.0,  green: 0.85, blue: 0.95)
-        case .goldenHour:     return Color(red: 1.0,  green: 0.95, blue: 0.8)
-        }
-    }
-}
 
 // MARK: - SettingsStore
 
@@ -160,13 +99,7 @@ class SettingsStore: ObservableObject {
     @AppStorage("useGlobeKey")             var useGlobeKey: Bool                  = true
     @AppStorage("customHotkeyKeyCode")     var customHotkeyKeyCode: Int           = 0
     @AppStorage("customHotkeyModifiers")   var customHotkeyModifiers: Int         = 0
-    @AppStorage("orbColor")               var orbColorRaw: String                = OrbColor.electricBlue.rawValue
-
-    var orbColor: OrbColor {
-        get { OrbColor(rawValue: orbColorRaw) ?? .electricBlue }
-        set { orbColorRaw = newValue.rawValue }
-    }
-
+    @AppStorage("dotThemeID")             var dotThemeID: String                  = "ocean"
     var selectedModel: WhisperModel {
         get { WhisperModel(rawValue: selectedModelRaw) ?? .medium }
         set { selectedModelRaw = newValue.rawValue }
