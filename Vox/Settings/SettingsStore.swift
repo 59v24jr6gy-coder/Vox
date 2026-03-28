@@ -44,22 +44,6 @@ enum WhisperModel: String, CaseIterable, Identifiable {
     }
 }
 
-// MARK: - InsertionMethod
-
-enum InsertionMethod: String, CaseIterable, Identifiable {
-    case axAPI     = "axAPI"
-    case clipboard = "clipboard"
-
-    var id: String { rawValue }
-
-    var displayName: String {
-        switch self {
-        case .axAPI:     return "AX API (nativ)"
-        case .clipboard: return "Zwischenablage (Fallback)"
-        }
-    }
-}
-
 // MARK: - TranscriptionLanguage
 
 enum TranscriptionLanguage: String, CaseIterable, Identifiable {
@@ -94,7 +78,6 @@ class SettingsStore: ObservableObject {
 
     @AppStorage("selectedModel")            var selectedModelRaw: String          = WhisperModel.medium.rawValue
     @AppStorage("transcriptionLanguage")   var transcriptionLanguageRaw: String  = TranscriptionLanguage.german.rawValue
-    @AppStorage("insertionMethod")         var insertionMethodRaw: String         = InsertionMethod.axAPI.rawValue
     @AppStorage("launchAtLogin")           var launchAtLogin: Bool                = false
     @AppStorage("useGlobeKey")             var useGlobeKey: Bool                  = true
     @AppStorage("customHotkeyKeyCode")     var customHotkeyKeyCode: Int           = 0
@@ -110,8 +93,4 @@ class SettingsStore: ObservableObject {
         set { transcriptionLanguageRaw = newValue.rawValue }
     }
 
-    var insertionMethod: InsertionMethod {
-        get { InsertionMethod(rawValue: insertionMethodRaw) ?? .axAPI }
-        set { insertionMethodRaw = newValue.rawValue }
-    }
 }

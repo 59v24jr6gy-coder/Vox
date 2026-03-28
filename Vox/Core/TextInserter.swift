@@ -1,71 +1,15 @@
 import Foundation
 import AppKit
-import ApplicationServices
 
 class TextInserter {
 
     // MARK: - Public API
 
-    func insert(text: String, method: InsertionMethod) {
-        switch method {
-        case .axAPI:
-            if !insertViaAXAPI(text: text) {
-                print("[TextInserter] AX API fehlgeschlagen, Fallback auf Clipboard")
-                insertViaClipboard(text: text)
-            }
-        case .clipboard:
-            insertViaClipboard(text: text)
-        }
+    func insert(text: String) {
+        insertViaClipboard(text: text)
     }
 
-    // MARK: - AX API
-
-    @discardableResult
-    private func insertViaAXAPI(text: String) -> Bool {
-        guard AXIsProcessTrusted() else {
-            print("[TextInserter] Keine Accessibility-Berechtigung")
-            return false
-        }
-
-        let systemWide = AXUIElementCreateSystemWide()
-
-        var focusedElement: CFTypeRef?
-        let result = AXUIElementCopyAttributeValue(
-            systemWide,
-            kAXFocusedUIElementAttribute as CFString,
-            &focusedElement
-        )
-
-        guard result == .success, let element = focusedElement else {
-            print("[TextInserter] Kein fokussiertes Element gefunden (AXError: \(result.rawValue))")
-            return false
-        }
-
-        let axElement = element as! AXUIElement  // swiftlint:disable:this force_cast
-
-        // Prüfen ob Element editierbar ist
-        var isSettable: DarwinBoolean = false
-        AXUIElementIsAttributeSettable(axElement, kAXValueAttribute as CFString, &isSettable)
-
-        if isSettable.boolValue {
-            // Direkt den selektierten Text ersetzen
-            let setResult = AXUIElementSetAttributeValue(
-                axElement,
-                kAXSelectedTextAttribute as CFString,
-                text as CFTypeRef
-            )
-
-            if setResult == .success {
-                print("[TextInserter] Text via AX API eingefügt")
-                return true
-            }
-        }
-
-        print("[TextInserter] AX Einfügen fehlgeschlagen, Element nicht editierbar")
-        return false
-    }
-
-    // MARK: - Clipboard Fallback
+    // MARK: - Clipboard + Cmd+V
 
     private func insertViaClipboard(text: String) {
         let pasteboard = NSPasteboard.general

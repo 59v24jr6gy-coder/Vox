@@ -181,7 +181,7 @@ class AppState: ObservableObject {
 
             if !text.isEmpty {
                 lastTranscription = text
-                textInserter.insert(text: text, method: settings.insertionMethod)
+                textInserter.insert(text: text)
             }
             recordingState = .idle
 

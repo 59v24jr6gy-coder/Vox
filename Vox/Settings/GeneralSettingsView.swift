@@ -26,25 +26,7 @@ struct GeneralSettingsView: View {
                 }
             }
 
-            Section("Text-Einfügung") {
-                Picker("Methode", selection: $settings.insertionMethodRaw) {
-                    ForEach(InsertionMethod.allCases) { method in
-                        Text(method.displayName).tag(method.rawValue)
-                    }
-                }
-                .pickerStyle(.radioGroup)
-
-                if settings.insertionMethod == .clipboard {
-                    Label(
-                        "Der bisherige Zwischenablagen-Inhalt wird nach dem Einfügen automatisch wiederhergestellt.",
-                        systemImage: "info.circle"
-                    )
-                    .font(.caption)
-                    .foregroundColor(.secondary)
-                }
-            }
-
-            Section("System") {
+Section("System") {
                 LaunchAtLogin.Toggle("Bei Anmeldung starten")
             }
         }
